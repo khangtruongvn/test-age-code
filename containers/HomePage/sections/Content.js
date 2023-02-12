@@ -32,9 +32,9 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="px-3 mt-9">
+    <section className="px-3 mt-9">
       <Tabs tabs={tabs} tabActive={currentTab} onChange={handleOnChangeTab} />
-    </div>
+    </section>
   );
 };
 

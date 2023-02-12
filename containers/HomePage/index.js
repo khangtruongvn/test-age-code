@@ -3,10 +3,10 @@ import dynamic from 'next/dynamic';
 const Banner = dynamic(() => import('./sections/Banner'), { ssr: false });
 const Content = dynamic(() => import('./sections/Content'), { ssr: false });
 
-const HomePage = () => {
+const HomePage = ({ user }) => {
   return (
     <>
-      <Banner />
+      <Banner user={user} />
       <Content />
     </>
   );

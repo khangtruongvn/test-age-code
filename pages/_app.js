@@ -1,8 +1,17 @@
 import '@styles/global.css';
 import 'tailwindcss/tailwind.css';
+import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <Component {...pageProps} />
+      </Hydrate>
+    </QueryClientProvider>
+  );
 }
 
 export default MyApp;

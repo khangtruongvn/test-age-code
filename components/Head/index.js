@@ -1,7 +1,11 @@
-import NextHead from "next/head";
+import NextHead from 'next/head';
 
-const Head = () => {
-  return <NextHead></NextHead>
-}
+const Head = ({ title }) => {
+  return (
+    <NextHead>
+      <title>{title || 'Test AgeCode'}</title>
+    </NextHead>
+  );
+};
 
-export default Head
+export default Head;
