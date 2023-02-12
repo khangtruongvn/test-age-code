@@ -1,19 +1,6 @@
-import { getTimeline } from '@api/index';
-import { queryConfig } from '@configs/queryConfig';
 import { memo } from 'react';
-import { useQuery } from 'react-query';
 
-const INIT_VALUES = {
-  timeline: [],
-};
-
-const Timeline = () => {
-  const { data } = useQuery({
-    queryKey: 'timeline',
-    queryFn: getTimeline,
-    initialData: INIT_VALUES,
-    ...queryConfig,
-  });
+const Timeline = ({ data }) => {
   const { timeline } = data;
 
   return (
@@ -24,13 +11,11 @@ const Timeline = () => {
             <div className="flex space-x-2">
               <img src={item.avatar} alt={item.name} style={{ width: 38, height: 38 }} />
               <div>
-                <p className="text-xs font-bold">{item.name}</p>
-                <p className="text-xs" style={{ color: '#99908D' }}>
-                  {item.time}
-                </p>
+                <p className="text-xs font-bold text-black">{item.name}</p>
+                <p className="text-xs text-grey">{item.time}</p>
               </div>
             </div>
-            <p className="mt-2 text-xs">{item.content}</p>
+            <p className="mt-2 text-xs text-black">{item.content}</p>
           </div>
         ))}
       </div>

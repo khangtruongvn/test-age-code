@@ -12,14 +12,20 @@ export const getUserProfile = async () => {
 
 export const getProfile = async () => {
   console.log('[GET] get profile');
-  fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-  return {
-    audio: AUDIO_LIST,
-    links: LINK_LIST,
-    video: VIDEO,
-  };
+  try {
+    await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    return {
+      audio: AUDIO_LIST,
+      links: LINK_LIST,
+      video: VIDEO,
+    };
+  } catch (error) {
+    return {
+      audio: [],
+      links: [],
+      video: {},
+    };
+  }
 };
 
 export const getRating = async () => {

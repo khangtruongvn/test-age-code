@@ -14,7 +14,6 @@ export default function Document() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
           rel="stylesheet"
         />
-        <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <Main />
       <NextScript />

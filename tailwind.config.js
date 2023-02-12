@@ -1,18 +1,16 @@
-const colors = require('tailwindcss/colors');
-// const customColors = require('@configs/colors');
-
 module.exports = {
-  purge: [],
-  content: ['./pages/*.{html,js,jsx}'],
-  darkMode: false,
+  content: ['./**/*.{html,js,jsx}'],
   theme: {
-    colors: {},
-    container: {
-      padding: '2rem',
+    colors: {
+      black: '#34231F',
+      white: '#FFFFFF',
+      grey: {
+        DEFAULT: '#99908D',
+        2: '#EBE9E9',
+        3: '#F2F4F7',
+      },
+      yellow: '#FFD300',
     },
-    extend: {},
-  },
-  variants: {
     extend: {},
   },
   plugins: [],

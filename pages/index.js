@@ -1,5 +1,6 @@
 import { getUserProfile } from '@api/index';
 import Head from '@components/Head';
+import { queryConfig } from '@configs/queryConfig';
 import MainLayout from '@layouts/MainLayout';
 import dynamic from 'next/dynamic';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
@@ -17,7 +18,7 @@ export const getServerSideProps = async () => {
 };
 
 export default function Home() {
-  const { data: userData } = useQuery({ queryKey: ['user'], queryFn: getUserProfile });
+  const { data: userData } = useQuery('user', getUserProfile, queryConfig);
 
   return (
     <MainLayout>

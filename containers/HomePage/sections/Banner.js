@@ -13,8 +13,8 @@ const Banner = ({ user }) => {
         </div>
       </div>
       <div className="px-3 mt-11">
-        <span className="mt-3 block">{user.name}</span>
-        <span className="mt-1 block text-sm">{user.lastLogin}</span>
+        <span className="mt-3 block font-bold text-black">{user.name}</span>
+        <span className="mt-1 block text-xs text-grey">{user.lastLogin}</span>
       </div>
     </section>
   );
